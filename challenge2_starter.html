@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Student: Nirupamarayudu Chitturi | Panther ID: 002931435 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2 - I Love NY T-Shirt</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            color: #182033;
+            background: linear-gradient(135deg, #dbeafe, #fce7f3);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            width: min(94vw, 700px);
+            padding: 2rem 1rem 2.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 1.4rem;
+            color: #172554;
+            font-size: clamp(1.55rem, 4vw, 2.35rem);
+        }
+
+        /* Positioned parent: the absolutely positioned logo uses this div as its anchor. */
+        .shirt-stage {
+            position: relative;
+            width: min(92vw, 520px);
+            margin: 0 auto;
+            padding: 24px;
+            overflow: hidden;
+            background-color: #bfdbfe;
+            border: 8px solid #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.28);
+        }
+
+        img {
+            position: relative;
+            left: 10px; /* Required: image is 10px right of its default location. */
+            z-index: 1;
+            display: block;
+            width: calc(100% - 20px);
+            height: auto;
+            padding: 8px;
+            margin: 0;
+            border: 3px solid #94a3b8;
+            border-radius: 18px;
+            background-color: #e2e8f0;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+        }
+
+        .words {
+            font-weight: 900;
+            line-height: 0.82;
+            letter-spacing: -0.08em;
+            color: #111827;
+            font-family: Arial Black, Arial, Helvetica, sans-serif;
+        }
+
+        .first,
+        .heart,
+        .last {
+            position: absolute;
+            z-index: 5; /* Higher than the image, so the logo stays visible. */
+            display: block;
+            transform: translateX(-50%);
+        }
+
+        .first {
+            top: 31%;
+            left: 45%;
+            font-size: clamp(3.2rem, 12vw, 5.5rem);
+        }
+
+        .heart {
+            top: 29%;
+            left: 60%;
+            color: #dc2626;
+            font-size: clamp(3.2rem, 12vw, 5.5rem);
+            line-height: 1;
+            text-shadow: 0 3px 0 #991b1b;
+        }
+
+        .last {
+            top: 45%;
+            left: 52%;
+            font-size: clamp(3.1rem, 12vw, 5.4rem);
+        }
+
+        .caption {
+            margin: 1.4rem 0 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>I &hearts; NY T-Shirt</h1>
+
+        <div class="shirt-stage">
+            <span class="first words">I</span>
+            <span class="heart" aria-label="love">&hearts;</span>
+            <span class="last words">NY</span>
+            <img src="tshirt.png" alt="Plain white T-shirt">
+        </div>
+
+        <p class="caption">CSS positioning and z-index place the logo above the shirt.</p>
+    </main>
+</body>
+</html>
